@@ -69,4 +69,6 @@ client.on(Events.InteractionCreate, async interaction => {
 client.login(token).catch(erro => {
   console.error('Erro ao conectar o ZYNEX BOT:', erro);
 });
-  
+  console.log("CLIENT_ID carregado:", !!clientId);
+console.log("GUILD_ID carregado:", !!guildId);
+console.log("DISCORD_TOKEN carregado:", !!token);
