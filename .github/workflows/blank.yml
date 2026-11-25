@@ -1,34 +1,4 @@
-name: Ligar ZYNEX BOT
-
-on:
-  workflow_dispatch:
-
-jobs:
-  iniciar:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Baixar projeto
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Conferir arquivos
-        run: |
-          pwd
-          ls -la
-          test -f index.js || exit 1
-          test -f package.json || exit 1
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Ligar ZYNEX BOT
-        run: npm start
-        env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          GUILD_ID: ${{ secrets.GUILD_ID }}
+- name: Configurar Node.js
+  uses: actions/setup-node@v4
+  with:
+    node-version: 20
